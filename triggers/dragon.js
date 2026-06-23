@@ -23,7 +23,7 @@ Type: regexp
 Pattern: You feel you are once again able to summon dragons to your aid|soars up into the sky and disappears */
 
 // Execute the following commands:
-   gwc.connection.send(`dfear`)
+   dfear
 
 // ----------------------------------------------------
 
