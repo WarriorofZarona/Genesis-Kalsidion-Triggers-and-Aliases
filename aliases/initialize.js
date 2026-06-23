@@ -5,7 +5,6 @@
 
 // Execute the following javascript:
   gwc.userdata.sap = true
-  gwc.userdata.katana = false
   gwc.userdata.broadsword = false
   gwc.userdata.tank = false
   gwc.userdata.whetstone = false
