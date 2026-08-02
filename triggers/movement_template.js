@@ -31,7 +31,6 @@ const step = paths[index]
 // If you already have the stop patrol alias like below, use that instead.
 // As a bonus, I added a conquer area command in case the end of the patrol clears out all enemies in the region.
 // This is not necessary for non-warfare regions.
-
 if (index > paths.length - 1) {
 gwc.connection.send('stop patrol', true)
 gwc.output.append('Patrol done!')
