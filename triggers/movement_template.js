@@ -27,7 +27,7 @@ const paths = gwc.userdata.patrol.path
 const step = paths[index]
 
 // Disables the trigger when the patrol is finished
-// Note: You typically want to turn off  itself along with the attack triggers you enabled.
+// Note: You typically want to turn the movement trigger itself off along with the attack triggers you enabled.
 // As a bonus, I added a conquer area command in case the end of the patrol clears out all enemies in the region.
 // This is not necessary for non-warfare regions.
 
