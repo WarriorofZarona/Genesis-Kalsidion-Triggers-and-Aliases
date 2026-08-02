@@ -1,6 +1,14 @@
 /* This file is a sample template for how I create my movement triggers, which should be paired with a patrol script. Please go to alises/patrol_template.js to see the pairing script.
 It takes the paths and index that was initialized from the patrol script and controls movement for the rest of the patrol until it gets to the end of the path.
 
+Reminder: A kill trigger is also needed for the full patrol script to work.
+
+ Your kill trigger will need a pattern of:
+ ^The (.*) died|panics and flees
+ which triggers the <kill> command on the target
+ In this sample, the command is just <kill dwarf>
+ Reach out if you need help making your separate kill trigger.
+
  Below is a sample of movement script for patroling throtyl pass against the Neidar dwarves for the warplains. Feel free to customize as you see fit for your own patrols
  Notes: 
   The movement trigger will first move to the next room set in the script.
