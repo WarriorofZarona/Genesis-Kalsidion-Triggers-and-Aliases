@@ -27,14 +27,13 @@ const paths = gwc.userdata.patrol.path
 const step = paths[index]
 
 // Disables the trigger when the patrol is finished
-// Note: You typically want to turn the movement trigger itself off along with the attack triggers you enabled.
+// Note: You typically want to turn the movement trigger itself off along with the attack triggers you enabled. 
+// If you already have the stop patrol alias like below, use that instead.
 // As a bonus, I added a conquer area command in case the end of the patrol clears out all enemies in the region.
 // This is not necessary for non-warfare regions.
 
 if (index > paths.length - 1) {
-gwc.trigger.disable('Util: Patrol - Pause when tired')
-gwc.trigger.disable('Util: Attack - Dwarf')
-gwc.trigger.disable('Util: Patrol - Throtyl Pass Movement')
+gwc.connection.send('stop patrol', true)
 gwc.output.append('Patrol done!')
 gwc.connection.send('conquer area')
 return;
