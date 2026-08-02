@@ -1,5 +1,5 @@
-/* This file is a sample template for how I create my movement triggers, which should be paired with a patrol script. 
-It takes the paths and index that was initialized from the patrol script and controls movement for the rest of the patrol until it gets to the end of the path
+/* This file is a sample template for how I create my movement triggers, which should be paired with a patrol script. Please go to alises/patrol_template.js to see the pairing script.
+It takes the paths and index that was initialized from the patrol script and controls movement for the rest of the patrol until it gets to the end of the path.
 
  Below is a sample of movement script for patroling throtyl pass against the Neidar dwarves for the warplains. Feel free to customize as you see fit for your own patrols
  Notes: 
