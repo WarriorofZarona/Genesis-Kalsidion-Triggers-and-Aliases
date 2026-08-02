@@ -43,7 +43,7 @@ return;
 // This will follow the path set in the initial patrol script
 gwc.connection.send(step)
 
-// Increase index and follow through with next action in room.
+// Increase index
 // Essentially, it sets the next step
 gwc.userdata.patrol.index = ++index;
 
