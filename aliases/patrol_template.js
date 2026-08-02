@@ -80,7 +80,7 @@ const path = [
  gwc.trigger.enable('Util: Attack - Dwarf')
 
  // Pauses the script if out of stamina
- // This ensure the script doesn't keep firing if your stamina is gone.
+ // This is something I use personally to ensure the script doesn't keep firing if your stamina is gone.
  // I'll post the script in the triggers folders, but it essentially just
  // disables all kill and movement triggers.
   gwc.trigger.enable('Util: Patrol - Pause when tired')
