@@ -13,7 +13,7 @@
 
 const patrol = args["*"].trim().toLowerCase();
 
-     // Enables the kill and movement triggers based on the patrol, followed by the kill action to resume the script.
+// Enables the kill and movement triggers based on the patrol, followed by the kill action to resume the script.
   switch (patrol) {
     case "throtyl pass":
      gwc.trigger.enable('Util: Attack - Dwarf')
