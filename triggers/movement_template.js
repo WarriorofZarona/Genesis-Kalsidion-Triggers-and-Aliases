@@ -50,5 +50,6 @@ gwc.userdata.patrol.index = ++index;
 // Your next actions here
 // In my case, I also drink alcohol as I move to keep my intoxication high and is a bonus
 // Use whatever actions you want to use as long as you try to attack the target in the next room.
+// Reminder that <k> is my personal kill alias, replace it with your own kill alias or the default <kill> command
 gwc.connection.send("drink from bottle")
 gwc.connection.send("k dwarf", true)
