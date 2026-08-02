@@ -6,7 +6,7 @@
  Below is a sample of patrol script for patroling throtyl pass against the Neidar dwarves for the warplains. Feel free to customize as you see fit.
  Notes: 
   The kill trigger is posted below and is simple to make but needs to be enabled in this script.
-  The movement trigger also needs to be enabled here but is more complex, so I will post a movement trigger template in the triggers folder for this script.
+  The movement trigger also needs to be enabled here but is more complex, please go to triggers/movement_template.js to see how it works.
   <k> is my alias for killing, feel free to replace this with your own alias or the default <kill> command, remove "true" if it is not an alias.
   The target depends on the region. Most regions have a common descriptor like human, dwarf, etc.. Use this template if you know all mobs can be targeted with one descriptor.
   I have a varient script if mobs are different which I'll post in the future */
