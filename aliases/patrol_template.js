@@ -1,7 +1,8 @@
 /* This file is a sample template for how I create my patrol scripts. It defines a path inside of an array along with an index, saved to the user data, then starts with the initial kill action.
  Feel free to replace the path with any patrol you wish to make, followed by the target of your kill action.
  The script will typically require two triggers to accompany it: a kill trigger and a movement trigger. The specific kill and movement triggers must be enabled in this script.
-
+ 
+ For anyone who wishes to use this template, it's a matter of just changing the path you want to use for your patrol, followed by the kill/movement trigger, and the kill target action itself.
 
  Below is a sample of patrol script for patroling throtyl pass against the Neidar dwarves for the warplains. Feel free to customize as you see fit.
  Notes: 
