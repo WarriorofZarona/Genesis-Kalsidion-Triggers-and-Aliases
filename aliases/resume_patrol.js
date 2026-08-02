@@ -23,5 +23,5 @@ const patrol = args["*"].trim().toLowerCase();
      break; 
     default:
     // This will output an error message if you do not pass an acceptable patrol.
-    gwc.output.append("Incorrect patrol. Try again.)
+    gwc.output.append("Invalid patrol. Try again.)
   }
