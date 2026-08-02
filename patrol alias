@@ -1,0 +1,87 @@
+/* This file is a sample template for how I create my patrol scripts. It defines a path inside of an array along with an index, saved to the user data, then starts with the initial kill action.
+ Feel free to replace the path with any patrol you wish to make, followed by the target of your kill action.
+ The script will typically require two triggers to accompany it: a kill trigger and a movement trigger. Those will be posted in the trigger folder as an example.
+
+ Below is a sample of patrol script for patroling throtyl pass against the Neidar dwarves for the warplains. Feel free to customize as you see fit.
+ Notes: 
+ <k> is my alias for killing, feel free to replace this with your own alias or the default <kill> command, remove "true" if it is not an alias.
+ The target depends on who is controlling the plains. Adjust accordingly.
+ In my case, I uncomment the target and trigger targets I need. */
+
+// I typically use the name of the region as the command to initialize the script.
+// Pattern: throtyl pass
+
+// Execute the following javascript:
+// Starting point is the most southeastern point of the region.
+const path = [
+    "w","w","w","w","w","w","w","w","w","w","w","w","w",
+    "e","e","e",
+    "n",
+    "e","e","e","e","e","e","e","e","e","e",
+    "n",
+    "w","w","w","w","w","w","w","w","w","w",
+    "n",
+    "w",
+    "e","e","e","e","e","e","e","e","e","e","e","e",
+    "n",
+    "e",
+    "w","w","w","w","w","w","w","w","w","w","w","w","w",
+    "e","e",
+    "n",
+    "e","e","e","e","e","e","e","e","e","e","e",
+    "n",
+    "e",
+    "w","w","w","w","w","w","w","w","w","w","w",
+    "n",
+    "e","e","e","e","e","e","e","e","e","e",
+    "w",
+    "n",
+    "w","w","w","w","w","w","w","w","w","w",
+    "n",
+    "e","e","e","e","e","e","e",
+    "w",
+    "n",
+    "w","w","w","w","w","w",
+    "e",
+    "n",
+    "e","e","e","e","e","e",
+    "n",
+    "e",
+    "w","w","w","w","w","w","w","w","w",
+    "e","e","e",
+    "n",
+    "e","e","e","e",
+    "w",
+    "n",
+    "w"
+  ];
+  
+  // Saving the path and index to userdata
+  // This code is *essential* to ensuring your movement trigger works.
+  gwc.userdata.patrol = {
+  path,
+  index: 0
+  } 
+  
+  // Enables the trigger for the patrols
+ // The following controls movement
+  gwc.trigger.enable('Util: Patrol - Throtyl Pass Movement')
+
+// The following enables the needed kill action triggers
+// Most of these use a pattern of 
+// ^The (.*) died|panics and flees
+// which triggers the <kill> command on the target
+// In this example, the command is just <kill dwarf>.
+// Feel free to customize this on your own trigger
+ gwc.trigger.enable('Util: Attack - Dwarf')
+
+ // Pauses the script if out of stamina
+ // This ensure the script doesn't keep firing if your stamina is gone.
+ // I'll post the script in the triggers folders, but it essentially just
+ // disables all kill and movement triggers
+  gwc.trigger.enable('Util: Patrol - Pause when tired')
+  
+// Initial kill action
+gwc.connection.send("k dwarf", true)
+
+
