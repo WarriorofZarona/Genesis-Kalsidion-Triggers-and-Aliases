@@ -9,7 +9,10 @@ This also uses the target alias, go to target.js to see how it works.
 
 // Execute the following javascript:
 gwc.trigger.disable('Util: Patrol - Movement')
+gwc.trigger.disable('Util: Patrol - Pause when tired')
+// Saves this target in case the patrol is resumed
 gwc.userdata.patrol.lastTarget = gwc.userdata.patrol.target;
+// Clears the target from the userdata
 gwc.connection.send('target', true)
 
 // Disable misc. triggers
