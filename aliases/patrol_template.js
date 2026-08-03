@@ -17,7 +17,7 @@
 
 
 // Execute the following javascript:
-// Starting point is the most southeastern point of the region.
+
 const target = ''
 const path = [];
 
@@ -28,6 +28,8 @@ I typically use the name of the region as the command to initialize the script.
 Pattern: throtyl pass
 
 const target = 'dwarf'
+
+// Starting point is the most southeastern point of the region.
 const path = [
     "w","w","w","w","w","w","w","w","w","w","w","w","w",
     "e","e","e",
