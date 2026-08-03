@@ -11,14 +11,14 @@
 // Execute the following javascript:
   const lastTarget = gwc.userdata.patrol.lastTarget
   const target = gwc.userdata.patrol.target
+  
   if (!lastTarget && !target) {
-    gwc.output.append("No target to set! Please set a target using <target>!")
+    gwc.output.append("No target to set! Please set a target using <target> and try again!")
     return;
   } else if (lastTarget && !target) {
   gwc.connection.send(`target ${lastTarget}`, true)
-  return;
   }
 
   gwc.trigger.enable('Util: Patrol - Movement')
   
-  gwc.connection.send(`k ${target}`, true)
+  gwc.connection.send(`k ${target || lastTarget}`, true)
