@@ -6,7 +6,7 @@
 // For this example, it will only accept an argumment for throtyl pass, but you can accept more using a switch statement and by adding more cases.
 // Feel free to reach out if you need help coding this out to add more patrols.
 
-// Pattern: resume 
+// Pattern: resuming 
 // An argument needs to be passed here. For this example, use <resume throtyl pass>
 
 // Execute the following javascript:
