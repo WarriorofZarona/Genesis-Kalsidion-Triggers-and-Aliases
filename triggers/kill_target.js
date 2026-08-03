@@ -6,7 +6,7 @@ If no target has been set, this trigger won't fire. Because of this, you can kee
 
 // Name: Util: Attack - Target
 // Type: regexp
-// Pattern: ^The (.*) died|panics and flees
+// Pattern: ^(.*) died|panics and flees
 
 // Execute the following javascript:
   const target = gwc.userdata.patrol.target;
