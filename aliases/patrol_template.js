@@ -1,16 +1,17 @@
 /* This file is a sample template for how I create my patrol scripts. It defines a target and a path which is saved to the user data along with a starting 0 index, 
   then starts with the initial kill action.
- 
- The script will typically require two triggers to accompany it: a kill trigger and a movement trigger. The specific kill and movement triggers must be enabled in this script.
+
  
  For anyone who wishes to use this template, it's a matter of just changing the target path you want to use for your patrol. You do not have to change anything else.
 
  Notes: 
+ 
+   The script will typically require two triggers to accompany it: a kill trigger and a movement trigger. 
   The target is enabled here for use with the kill target trigger, please go to triggers/kill_target.js to see how it works.
   The target depends on the region. Most regions have a common descriptor like human, dwarf, etc.. Use this template if you know all mobs can be targeted with one descriptor.
   I have a variant script if mobs are different which I'll post in the future 
   
-  The movement trigger however needs to be enabled here, please go to triggers/movement_template.js to see how it works.
+  The movement trigger however needs to be enabled here, please go to triggers/patrol_movement.js to see how it works.
   <k> is my alias for killing, feel free to replace this with your own alias or the default <kill> command, remove "true" if it is not an alias.
  */
 
