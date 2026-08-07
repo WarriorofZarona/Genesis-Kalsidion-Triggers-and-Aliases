@@ -1,4 +1,4 @@
-/* This file slightly modifides the <dsteed> command to include a destination right away when added, for example <dsteed sanction> will fly you to sanction immediately after mounting.
+/* This file slightly modifies the <dsteed> command to include a destination right away when added, for example <dsteed sanction> will fly you to sanction immediately after mounting.
 
 You will need triggers to mount the dragon right away, which will also trigger your <fly> command to the destination added.
 
