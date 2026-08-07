@@ -16,9 +16,16 @@ Note: This pattern uses the name and description of my dragon. Replace it with y
 
 // Execute the following javascript:
   const destination = gwc.userdata.destination
+  const passenger = gwc.userdata.passenger
   
   if (!destination) return;
-  
+
+  if (passenger) {
+    gwc.connection.send)`pull ${passenger}`)
+    gwc.userdata.passenger = ""
+  }
+
+
   gwc.connection.send(`fly to ${destination}`)
   
   gwc.userdata.destination = ""
