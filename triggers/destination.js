@@ -21,7 +21,7 @@ Note: This pattern uses the name and description of my dragon. Replace it with y
   if (!destination) return;
 
   if (passenger) {
-    gwc.connection.send)`pull ${passenger}`)
+    gwc.connection.send(`pull ${passenger}`)
     gwc.userdata.passenger = ""
   }
 
