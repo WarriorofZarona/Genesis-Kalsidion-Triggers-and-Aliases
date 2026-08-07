@@ -25,7 +25,5 @@ Note: This pattern uses the name and description of my dragon. Replace it with y
     gwc.userdata.passenger = ""
   }
 
-
   gwc.connection.send(`fly to ${destination}`)
-  
   gwc.userdata.destination = ""
