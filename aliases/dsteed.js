@@ -22,5 +22,13 @@ triggers/dismount_dragon.js
 
 // Execute the following javascript:
   gwc.connection.send('!dsteed')
-  gwc.userdata.destination = args[1]
+  let destination = args[1]
+  
+  if (destination === "pax") {
+  destination = 'pax tharkas'
+  } else if (destination === 'wsp' || destination === 'solamnian') {
+  destination = 'solamnian plains'
+  }
+
+  gwc.userdata.destination = destination
   gwc.userdata.passenger = args[2]
