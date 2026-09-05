@@ -2,6 +2,7 @@
 
 This is an auto assist code I built to solve a few problems:
 
+- Assists members in your team only
 - Removing spam from constant <assist> commands without using a timer
 - Add the ability to whitelist pvp <assist!> for certain players
 - Assist any player in your party who either attacks first or is attacked first
