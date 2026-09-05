@@ -25,7 +25,7 @@ Pattern: ^(?!.*\bassists\b)(?:(.+?)\s+(?:attacks|turns to attack)\s+(.+?)\.|kill
   const pattern = args[0].toLowerCase();
   
   const statements = [
-    "dies",
+    "died",
     "panics and flees",
     "none of your team members are in combat"
   ];
