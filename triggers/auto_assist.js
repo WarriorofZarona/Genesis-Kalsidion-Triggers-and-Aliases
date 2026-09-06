@@ -22,27 +22,24 @@ Pattern: ^(?!.*\bassists\b)(?:(.+?)\s+(?:attacks|turns to attack)\s+(.+?)\.|kill
 */
 
 // Execute the following javascript:
-  const pattern = args[0].toLowerCase();
+ const pattern = args[0].toLowerCase();
+ const {members, leader} = mud.gmcp["char.team"];
+ const { assisting, assistTarget, assisterPerson } = gwc.userdata;
+ const attacker = args[1];
+ const target = args[2];
+ const team = [...members, leader];
+
   
   const statements = [
     "died",
     "panics and flees",
     "none of your team members are in combat"
   ];
-  
-  if (statements.some(statement => pattern.includes(statement))) {
+
+  if (!leader || statements.some(statement => pattern.includes(statement))) {
   gwc.userdata.assisting = false
   return;
   }
-  
-  const leader = mud.gmcp["char.team"].leader;
-  const attacker = args[1];
-  const target = args[2];
-  const assisting = gwc.userdata.assisting;
-  const assistTarget = gwc.userdata.assistTarget;
-  const assistPerson = gwc.userdata.assistPerson;
-  
-  const team = [...mud.gmcp["char.team"].members, leader];
 
 // Add players who would you like to use the <assist!> command instead.
   const aggressiveAssist = [];
