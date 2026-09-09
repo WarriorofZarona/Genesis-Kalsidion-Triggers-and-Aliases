@@ -9,7 +9,7 @@ Note:
 
 // Name: Util: Patrol - Movement
 // Type: regexp
-// Pattern: (You sense a divine force preventing your attack|Who would do the winching then|are fighting each other|That requires an exclamation mark|You cannot attack (.*) as (.*) is in your team)
+// Pattern: (A sudden flurry of motion erupts as|With a burst of energy fueled by adrenaline, (he|she) swiftly dodges the incoming attack|You find no such living creature|You sense a divine force|You feel a divine force protecting|are fighting each other|That requires an exclamation mark|You cannot attack (.*) as (.*) is in your team)
 
 // Execute the following javascript:
    // Get the userdata
