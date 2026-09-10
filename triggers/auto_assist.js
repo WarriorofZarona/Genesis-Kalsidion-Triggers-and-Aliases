@@ -18,19 +18,20 @@ It's still a work in progress and I'd love for others to test it out for me!
 
 /* Name: Util: Auto assist
 Type: regexp
-Pattern: ^(?!.*\bassists\b)(?:(.+?)\s+(?:attacks|turns to attack)\s+(.+?)\.|killed\b.*|is fighting\b.*)$|^(.*) died|panics and flees|None of your team members are in combat
+Pattern: ^(?!.*\bassists\b)(?:(.+?)\s+(?:attacks|turns to attack)\s+(.+?)\.|(.+?), with the assistance of .+?, and (.+?)\s+are fighting each other\.|(.+?)\s+and\s+(.+?)\s+are fighting each other\.|(.+?)\s+(?:is|are)\s+fighting\s+(.+?)|.+?\s+killed\b.*)$|^(.*) died|panics and flees|None of your team members are in combat|You are now hunted by
 */
 
 // Execute the following javascript:
  const pattern = args[0].toLowerCase();
- const {members, leader} = mud.gmcp["char.team"];
- const { assisting, assistTarget, assisterPerson } = gwc.userdata;
- const attacker = args[1];
- const target = args[2];
+ const { members, leader } = mud.gmcp["char.team"];
+ const { assisting = false, assistTarget = "", assistPerson = "" } = gwc.userdata;
+ const attacker = args[1] || args[3] || args[7];
+ const target = args[2] || args[4] || args[8];
  const team = [...members, leader];
-
+ const delayAssist =args[7] && args[8]
   
   const statements = [
+    'you are now hunted by',
     "died",
     "panics and flees",
     "none of your team members are in combat"
@@ -72,8 +73,8 @@ Pattern: ^(?!.*\bassists\b)(?:(.+?)\s+(?:attacks|turns to attack)\s+(.+?)\.|kill
       );
       // You may add any other additional commands here, like your specials. I use the <sp> alias to trigger all my specials after the assist.
       gwc.connection.send("sp", true);
-      // 100ms timer after the trigger, to avoid accidentally taking aggro when assisting
-    }, 100);
+      // Delay assist for certain scenarios for 2 seconds, otherwise 100ms timer after the trigger, to avoid accidentally taking aggro when assisting
+   }, delayAssist ? 2000 : 100);
     
     gwc.userdata.assisting = true;
     gwc.userdata.assistPerson = teamAttacker ? attacker : target;
