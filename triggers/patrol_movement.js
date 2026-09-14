@@ -27,6 +27,7 @@ const room = gwc.gmcp.data.room.id
     
     // Disables the trigger when the patrol is finished
     if (index > paths.length - 1) {
+    if (war) gwc.connection.send("conquer area")
     gwc.output.append("Patrol Done!")
     gwc.connection.send('stop patrol', true)
     return;
