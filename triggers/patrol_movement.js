@@ -9,14 +9,21 @@ Note:
 
 // Name: Util: Patrol - Movement
 // Type: regexp
-// Pattern: (A sudden flurry of motion erupts as|With a burst of energy fueled by adrenaline, (he|she) swiftly dodges the incoming attack|You find no such living creature|You sense a divine force|You feel a divine force protecting|are fighting each other|That requires an exclamation mark|You cannot attack (.*) as (.*) is in your team)
-
+// Pattern: (it appears to be currently owned by the Blue Dragon Army|A sudden flurry of motion erupts as|With a burst of energy fueled by adrenaline, (he|she) swiftly dodges the incoming attack|You find no such living creature|You sense a divine force|You feel a divine force protecting|are fighting each other|That requires an exclamation mark|You cannot attack (.*) as (.*) is in your team)
 // Execute the following javascript:
-   // Get the userdata
-    let index = gwc.userdata.patrol.index
-    const paths = gwc.userdata.patrol.path 
-    const step = paths[index]
-    const target = gwc.userdata.patrol.target
+   // Get the data
+const pattern = args[0]
+let { index, path: paths, target, war } = gwc.userdata.patrol
+const step = paths[index]
+const room = gwc.gmcp.data.room.id
+
+// During war plain, if BDA has already conquered the area, stop the patrol.
+// Note: Fow now, this is hard-coded only for BDA only.
+  if (war && pattern.includes("Blue Dragon Army")) {
+      gwc.connection.send('stop patrol', true)
+      gwc.output.append("BDA already conquered this plain!")
+      return
+      }
     
     // Disables the trigger when the patrol is finished
     if (index > paths.length - 1) {
@@ -33,6 +40,7 @@ Note:
     index++
     
     // Increase index and follow through with next action in room.
+    if (war) gwc.connection.send("exa area") // In war plains, check the area in every step
     gwc.userdata.patrol.index = index;
     gwc.connection.send("dfb", true)
     gwc.connection.send(`k ${target}`, true)
