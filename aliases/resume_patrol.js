@@ -9,9 +9,8 @@
 // Pattern: resume patrol
 
 // Execute the following javascript:
-  const lastTarget = gwc.userdata.patrol.lastTarget
-  const target = gwc.userdata.patrol.target
-  
+const { lastTarget, target, lastWarStatus } = gwc.userdata.patrol  
+
   if (!lastTarget && !target) {
     gwc.output.append("No target to set! Please set a target using <target> and try again!")
     return;
@@ -19,6 +18,7 @@
   gwc.connection.send(`target ${lastTarget}`, true)
   }
 
+  gwc.userdata.war = lastWarStatus
   gwc.trigger.enable('Util: Patrol - Movement')
-  
+  gwc.trigger.enable('Util: Patrol - Kabal Smith Room')
   gwc.connection.send(`k ${target || lastTarget}`, true)
