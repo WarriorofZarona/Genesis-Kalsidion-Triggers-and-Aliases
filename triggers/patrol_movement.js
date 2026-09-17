@@ -24,6 +24,14 @@ const room = gwc.gmcp.data.room.id
       gwc.output.append("BDA already conquered this plain!")
       return
       }
+
+// Swiming in river for 3 seconds at WSP
+  if (room === "4yMNy0") {
+  setTimeout(() => {
+  gwc.connection.send("dfb", true)
+  gwc.connection.send(`k ${target}`, true)}, 3000)
+  return
+  }
     
     // Disables the trigger when the patrol is finished
     if (index > paths.length - 1) {
@@ -43,5 +51,4 @@ const room = gwc.gmcp.data.room.id
     // Increase index and follow through with next action in room.
     if (war) gwc.connection.send("exa area") // In war plains, check the area in every step
     gwc.userdata.patrol.index = index;
-    gwc.connection.send("dfb", true)
     gwc.connection.send(`k ${target}`, true)
