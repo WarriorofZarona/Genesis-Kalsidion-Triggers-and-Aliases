@@ -28,7 +28,6 @@ const room = gwc.gmcp.data.room.id
 // Swiming in river for 3 seconds at WSP
   if (room === "4yMNy0") {
   setTimeout(() => {
-  gwc.connection.send("dfb", true)
   gwc.connection.send(`k ${target}`, true)}, 3000)
   return
   }
