@@ -18,7 +18,7 @@ It's still a work in progress and I'd love for others to test it out for me!
 
 /* Name: Util: Auto assist
 Type: regexp
-Pattern: ^(?!.*\bassists\b)(?:(.+?)\s+(?:attacks|turns to attack)\s+(.+?)\.|(.+?), with the assistance of .+?, and (.+?)\s+are fighting each other\.|(.+?)\s+and\s+(.+?)\s+are fighting each other\.|(.+?)\s+(?:is|are)\s+fighting\s+(.+?)|.+?\s+killed\b.*)$|^(.*) died|panics and flees|None of your team members are in combat|You are now hunted by
+Pattern: ^(?!.*\bassists\b)(?:(.+?)\s+(?:attacks|turns to attack)\s+(.+?)\.|(.+?), with the assistance of .+?, and (.+?)\s+are fighting each other\.|(.+?)\s+and\s+(.+?)\s+are fighting each other\.|(.+?)\s+(?:is|are)\s+fighting\s+(.+?)|.+?\s+killed\b.*)$|^(.*) died\.|panics and flees|None of your team members are in combat|You are now hunted by
 */
 
 // Execute the following javascript:
