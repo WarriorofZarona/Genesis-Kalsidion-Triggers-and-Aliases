@@ -17,8 +17,9 @@ const { lastTarget, target, lastWarStatus } = gwc.userdata.patrol
   } else if (lastTarget && !target) {
   gwc.connection.send(`target ${lastTarget}`, true)
   }
-
   gwc.userdata.war = lastWarStatus
+
+  // Re-enable patrol
   gwc.trigger.enable('Util: Patrol - Movement')
 
   // Kill action here
