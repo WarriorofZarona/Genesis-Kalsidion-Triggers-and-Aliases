@@ -81,7 +81,7 @@ const path = [
   gwc.userdata.patrol = {
   target,
   path,
-  index: 0
+  index: 0,
   war: false // set to true if it is a war plain
   }
   
