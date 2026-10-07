@@ -20,5 +20,6 @@ const { lastTarget, target, lastWarStatus } = gwc.userdata.patrol
 
   gwc.userdata.war = lastWarStatus
   gwc.trigger.enable('Util: Patrol - Movement')
-  gwc.trigger.enable('Util: Patrol - Kabal Smith Room')
+
+  // Kill action here
   gwc.connection.send(`k ${target || lastTarget}`, true)
